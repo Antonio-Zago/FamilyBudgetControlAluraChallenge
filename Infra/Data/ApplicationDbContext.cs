@@ -1,5 +1,6 @@
 ﻿using FamilyBudgetControlAluraChallenge.Domain.DespesaDomain;
 using FamilyBudgetControlAluraChallenge.Domain.ReceitaDomain;
+using Flunt.Notifications;
 using Microsoft.EntityFrameworkCore;
 
 namespace FamilyBudgetControlAluraChallenge.Infra.Data
@@ -14,7 +15,7 @@ namespace FamilyBudgetControlAluraChallenge.Infra.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            modelBuilder.Ignore<Notification>();
 
         }
 

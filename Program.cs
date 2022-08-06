@@ -4,7 +4,7 @@ using FamilyBudgetControlAluraChallenge.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["ConnectionStrings:SqlServer"]);
+builder.Services.AddSqlServer<ApplicationDbContext>(builder.Configuration["ConnectionStrings:SqlServerPc"]);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();

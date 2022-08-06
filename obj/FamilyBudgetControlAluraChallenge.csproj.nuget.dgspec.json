@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anton\\source\\repos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj": {}
+    "D:\\Meus Projetos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anton\\source\\repos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj": {
+    "D:\\Meus Projetos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anton\\source\\repos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj",
+        "projectUniqueName": "D:\\Meus Projetos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj",
         "projectName": "FamilyBudgetControlAluraChallenge",
-        "projectPath": "C:\\Users\\anton\\source\\repos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj",
-        "packagesPath": "C:\\Users\\anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anton\\source\\repos\\FamilyBudgetControlAluraChallenge\\obj\\",
+        "projectPath": "D:\\Meus Projetos\\FamilyBudgetControlAluraChallenge\\FamilyBudgetControlAluraChallenge.csproj",
+        "packagesPath": "C:\\Users\\Antonio Zago\\.nuget\\packages\\",
+        "outputPath": "D:\\Meus Projetos\\FamilyBudgetControlAluraChallenge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anton\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Antonio Zago\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Flunt": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.7, )"
