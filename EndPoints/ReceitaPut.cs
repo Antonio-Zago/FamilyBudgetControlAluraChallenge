@@ -4,24 +4,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FamilyBudgetControlAluraChallenge.EndPoints
 {
-    public class ReceitaPost
+    public static class ReceitaPut
     {
-        public static string Template => "/receitas";
+        public static string Template => "/receitas/{id:int}";
 
-        public static string[] Methods => new string[] { HttpMethod.Post.ToString() };
-
+        public static string[] Methods => new string[] {HttpMethod.Put.ToString() };
 
         public static Delegate handle => Action;
 
-        public static IResult Action(ReceitaRequest request, ApplicationDbContext context)
+        public static IResult Action([FromRoute] int id, ApplicationDbContext context, ReceitaRequest request) 
         {
+            var receita = context.Receitas.Where(r => r.Id == id).FirstOrDefault();
+            var receitaBusca = context.Receitas.Where(r => r.Descricao == request.Descricao && r.Data.Month == request.Data.Month && r.Data.Year == request.Data.Year).FirstOrDefault();
 
+            if (receita == null)
+                return Results.NotFound();
 
-            var receita = new Receita(request.Descricao, request.Valor, request.Data);
-
-            var receitaBusca = context.Receitas.Where(r => r.Descricao == receita.Descricao && r.Data.Month == receita.Data.Month && r.Data.Year == receita.Data.Year).FirstOrDefault();
-
-            
 
             if (!(receitaBusca == null))
             {
@@ -35,20 +33,19 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
                 return Results.UnprocessableEntity(resposta);
             }
-            
 
+
+            receita.EditInfo(request.Descricao, request.Data, request.Valor);
 
             if (!receita.IsValid)
+            {
                 return Results.ValidationProblem(receita.Notifications.ConvertToProblemDetails());
-                
+            }
 
-
-            context.Receitas.Add(receita);
             context.SaveChanges();
 
-            return Results.Created(ReceitaPost.Template + "/" + receita.Id, receita.Id);
+
+            return Results.Ok();
         }
-
-
     }
 }

@@ -19,15 +19,31 @@ namespace FamilyBudgetControlAluraChallenge.Domain.ReceitaDomain
             Valor = valor;
             Data = data;
 
+            Validate();
+        }
+
+        public void EditInfo(string descricao, DateTime data, double valor)
+        {
+            Descricao = descricao;
+            Data = data;
+            Valor = valor;
+
+            Validate();
+        }
+
+        public void Validate() 
+        {
             var contract = new Contract<Receita>()
                                 .IsNotNullOrEmpty(Descricao, "Descricao")
                                 .IsNotNull(Valor, "Valor")
                                 .IsGreaterThan(Valor, 0, "Valor")
                                 .IsGreaterThan(Data, DateTime.MinValue, "Data");
-                                
-                            
+
+
 
             AddNotifications(contract);
         }
     }
+
+   
 }
