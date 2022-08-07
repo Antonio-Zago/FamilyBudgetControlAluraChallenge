@@ -1,7 +1,7 @@
 ﻿using FamilyBudgetControlAluraChallenge.Infra.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FamilyBudgetControlAluraChallenge.EndPoints
+namespace FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints
 {
     public static class ReceitaDelete
     {
@@ -11,7 +11,7 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
         public static Delegate handle => Action;
 
-        public static IResult Action([FromRoute] int id, ApplicationDbContext context) 
+        public static IResult Action([FromRoute] int id, ApplicationDbContext context)
         {
             var receita = context.Receitas.Where(r => r.Id == id).FirstOrDefault();
 

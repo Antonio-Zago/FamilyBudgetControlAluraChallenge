@@ -1,6 +1,5 @@
-using FamilyBudgetControlAluraChallenge.Domain.ReceitaDomain;
-using FamilyBudgetControlAluraChallenge.EndPoints;
-using FamilyBudgetControlAluraChallenge.EndPoints.DespedaEndPoints;
+using FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints;
+using FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints;
 using FamilyBudgetControlAluraChallenge.Infra.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +24,10 @@ app.MapMethods(ReceitaPut.Template, ReceitaPut.Methods, ReceitaPut.handle);
 app.MapMethods(ReceitaDelete.Template, ReceitaDelete.Methods, ReceitaDelete.handle);
 
 app.MapMethods(DespesaPost.Template, DespesaPost.Methods, DespesaPost.handle);
-
+app.MapMethods(DespesaGetAll.Template, DespesaGetAll.Methods, DespesaGetAll.handle);
+app.MapMethods(DespesaGet.Template, DespesaGet.Methods, DespesaGet.handle);
+app.MapMethods(DespesaPut.Template, DespesaPut.Methods, DespesaPut.handle);
+app.MapMethods(DespesaDelete.Template, DespesaDelete.Methods, DespesaDelete.handle);
 
 
 

@@ -2,7 +2,7 @@
 using FamilyBudgetControlAluraChallenge.Infra.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FamilyBudgetControlAluraChallenge.EndPoints
+namespace FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints
 {
     public static class ReceitaGet
     {
@@ -12,14 +12,14 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
         public static Delegate handle => Action;
 
-        public static IResult Action([FromRoute] int id,ApplicationDbContext context) 
+        public static IResult Action([FromRoute] int id, ApplicationDbContext context)
         {
             var receita = context.Receitas.Where(r => r.Id == id).FirstOrDefault();
 
             if (receita == null)
                 return Results.NotFound();
 
-            var response = new ReceitaResponse { Id = receita.Id, Data = receita.Data, Descricao = receita.Descricao, Valor = receita.Valor};
+            var response = new ReceitaResponse { Id = receita.Id, Data = receita.Data, Descricao = receita.Descricao, Valor = receita.Valor };
 
 
             return Results.Ok(response);

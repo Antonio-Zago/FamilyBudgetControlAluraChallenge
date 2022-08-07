@@ -1,7 +1,7 @@
 ﻿using FamilyBudgetControlAluraChallenge.Domain.ReceitaDomain;
 using FamilyBudgetControlAluraChallenge.Infra.Data;
 
-namespace FamilyBudgetControlAluraChallenge.EndPoints
+namespace FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints
 {
     public class ReceitaGetAll
     {
@@ -12,12 +12,12 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
         public static Delegate handle => Action;
 
-        public static IResult Action(ApplicationDbContext context) 
+        public static IResult Action(ApplicationDbContext context)
         {
             var receitas = context.Receitas.ToList();
             var response = receitas.Select(r => new ReceitaResponse { Descricao = r.Descricao, Data = r.Data, Valor = r.Valor, Id = r.Id });
 
             return Results.Ok(response);
-        } 
+        }
     }
 }

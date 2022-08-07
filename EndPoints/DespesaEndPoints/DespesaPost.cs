@@ -1,7 +1,7 @@
 ﻿using FamilyBudgetControlAluraChallenge.Domain.DespesaDomain;
 using FamilyBudgetControlAluraChallenge.Infra.Data;
 
-namespace FamilyBudgetControlAluraChallenge.EndPoints.DespedaEndPoints
+namespace FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints
 {
     public static class DespesaPost
     {

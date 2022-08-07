@@ -34,5 +34,14 @@ namespace FamilyBudgetControlAluraChallenge.Domain.DespesaDomain
 
             AddNotifications(contract);
         }
+
+        public void EditInfo(string descricao, double valor, DateTime data)
+        {
+            Descricao = descricao;
+            Valor = valor;
+            Data = data;
+
+            Validate();
+        }
     }
 }

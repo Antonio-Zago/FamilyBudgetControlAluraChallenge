@@ -2,7 +2,7 @@
 using FamilyBudgetControlAluraChallenge.Infra.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FamilyBudgetControlAluraChallenge.EndPoints
+namespace FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints
 {
     public class ReceitaPost
     {
@@ -21,7 +21,7 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
             var receitaBusca = context.Receitas.Where(r => r.Descricao == receita.Descricao && r.Data.Month == receita.Data.Month && r.Data.Year == receita.Data.Year).FirstOrDefault();
 
-            
+
 
             if (!(receitaBusca == null))
             {
@@ -35,18 +35,18 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints
 
                 return Results.UnprocessableEntity(resposta);
             }
-            
+
 
 
             if (!receita.IsValid)
                 return Results.ValidationProblem(receita.Notifications.ConvertToProblemDetails());
-                
+
 
 
             context.Receitas.Add(receita);
             context.SaveChanges();
 
-            return Results.Created(ReceitaPost.Template + "/" + receita.Id, receita.Id);
+            return Results.Created(Template + "/" + receita.Id, receita.Id);
         }
 
 
