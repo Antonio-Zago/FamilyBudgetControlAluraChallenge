@@ -1,3 +1,4 @@
+using FamilyBudgetControlAluraChallenge.EndPoints;
 using FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints;
 using FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints;
 using FamilyBudgetControlAluraChallenge.Infra.Data;
@@ -33,6 +34,11 @@ app.MapMethods(DespesaGetFromMonth.Template, DespesaGetFromMonth.Methods, Despes
 
 
 app.MapMethods(CategoriaDespesaGetAll.Template, CategoriaDespesaGetAll.Methods, CategoriaDespesaGetAll.handle);
+
+
+app.MapMethods(ResumoMesGet.Template, ResumoMesGet.Methods, ResumoMesGet.handle);
+
+
 
 
 
