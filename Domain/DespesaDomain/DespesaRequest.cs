@@ -7,5 +7,7 @@
         public double Valor { get; set; }
 
         public DateTime Data { get; set; }
+
+        public int CategoriaDespesaId { get; set; }
     }
 }

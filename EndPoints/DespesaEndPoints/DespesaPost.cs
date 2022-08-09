@@ -13,7 +13,13 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints
 
         public static IResult Action(ApplicationDbContext context, DespesaRequest request)
         {
-            var despesa = new Despesa(request.Descricao, request.Valor, request.Data);
+            var categoriaDepesas = context.CategoriaDespesas.Where(c => c.Id == request.CategoriaDespesaId ).FirstOrDefault();
+
+            if (categoriaDepesas == null)
+                return Results.BadRequest();
+
+            var despesa = new Despesa(request.Descricao, request.Valor, request.Data, categoriaDepesas);
+
 
             var despesaBusca = context.Despesas.Where(d => d.Descricao == despesa.Descricao && d.Data.Month == despesa.Data.Month && d.Data.Year == despesa.Data.Year).FirstOrDefault();
 

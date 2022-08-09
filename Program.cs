@@ -30,6 +30,9 @@ app.MapMethods(DespesaPut.Template, DespesaPut.Methods, DespesaPut.handle);
 app.MapMethods(DespesaDelete.Template, DespesaDelete.Methods, DespesaDelete.handle);
 
 
+app.MapMethods(CategoriaDespesaGetAll.Template, CategoriaDespesaGetAll.Methods, CategoriaDespesaGetAll.handle);
+
+
 
 
 app.Run();

@@ -12,6 +12,8 @@ namespace FamilyBudgetControlAluraChallenge.Infra.Data
 
         public DbSet<Despesa> Despesas { get; set; }
 
+        public DbSet<CategoriaDespesa> CategoriaDespesas { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -3,7 +3,7 @@ using FamilyBudgetControlAluraChallenge.Infra.Data;
 
 namespace FamilyBudgetControlAluraChallenge.EndPoints.ReceitaEndPoints
 {
-    public class ReceitaGetAll
+    public static class ReceitaGetAll
     {
         public static string Template => "/receitas";
 
