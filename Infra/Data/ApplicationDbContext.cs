@@ -18,6 +18,7 @@ namespace FamilyBudgetControlAluraChallenge.Infra.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<Notification>();
+         
 
         }
 

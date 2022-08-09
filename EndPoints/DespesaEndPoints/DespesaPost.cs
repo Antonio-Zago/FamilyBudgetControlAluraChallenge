@@ -16,7 +16,7 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints
             var categoriaDepesas = context.CategoriaDespesas.Where(c => c.Id == request.CategoriaDespesaId ).FirstOrDefault();
 
             if (categoriaDepesas == null)
-                return Results.BadRequest();
+                categoriaDepesas = context.CategoriaDespesas.Where(c => c.Nome == "Outras").FirstOrDefault();
 
             var despesa = new Despesa(request.Descricao, request.Valor, request.Data, categoriaDepesas);
 

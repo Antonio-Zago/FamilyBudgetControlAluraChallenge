@@ -14,6 +14,11 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints
 
         public static IResult Action([FromRoute] int id, ApplicationDbContext context, DespesaRequest request)
         {
+            var categoriaDepesas = context.CategoriaDespesas.Where(c => c.Id == request.CategoriaDespesaId).FirstOrDefault();
+
+            if (categoriaDepesas == null)
+                categoriaDepesas = context.CategoriaDespesas.Where(c => c.Nome == "Outras").FirstOrDefault();
+
             var despesa = context.Despesas.Where(d => d.Id == id).FirstOrDefault();
             var despesaBusca = context.Despesas.Where(d => d.Descricao == request.Descricao && d.Data.Month == request.Data.Month && d.Data.Year == request.Data.Year).FirstOrDefault();
 
@@ -35,7 +40,7 @@ namespace FamilyBudgetControlAluraChallenge.EndPoints.DespesaEndPoints
 
             
 
-            despesa.EditInfo(request.Descricao, request.Valor, request.Data);
+            despesa.EditInfo(request.Descricao, request.Valor, request.Data, categoriaDepesas);
 
             if (!despesa.IsValid)
             {

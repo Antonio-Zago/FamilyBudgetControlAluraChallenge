@@ -22,12 +22,14 @@ app.MapMethods(ReceitaGetAll.Template, ReceitaGetAll.Methods, ReceitaGetAll.hand
 app.MapMethods(ReceitaGet.Template, ReceitaGet.Methods, ReceitaGet.handle);
 app.MapMethods(ReceitaPut.Template, ReceitaPut.Methods, ReceitaPut.handle);
 app.MapMethods(ReceitaDelete.Template, ReceitaDelete.Methods, ReceitaDelete.handle);
+app.MapMethods(ReceitaGetFromMonth.Template, ReceitaGetFromMonth.Methods, ReceitaGetFromMonth.handle);
 
 app.MapMethods(DespesaPost.Template, DespesaPost.Methods, DespesaPost.handle);
 app.MapMethods(DespesaGetAll.Template, DespesaGetAll.Methods, DespesaGetAll.handle);
 app.MapMethods(DespesaGet.Template, DespesaGet.Methods, DespesaGet.handle);
 app.MapMethods(DespesaPut.Template, DespesaPut.Methods, DespesaPut.handle);
 app.MapMethods(DespesaDelete.Template, DespesaDelete.Methods, DespesaDelete.handle);
+app.MapMethods(DespesaGetFromMonth.Template, DespesaGetFromMonth.Methods, DespesaGetFromMonth.handle);
 
 
 app.MapMethods(CategoriaDespesaGetAll.Template, CategoriaDespesaGetAll.Methods, CategoriaDespesaGetAll.handle);
